@@ -327,3 +327,29 @@ service {
         disable
     }
 }
+system {
+    domain-name Epsilon.local
+    host-name Epsilon.router
+    name-server 192.168.32.2
+    ntp {
+        server 0.ubnt.pool.ntp.org {
+        }
+        server 1.ubnt.pool.ntp.org {
+        }
+        server 2.ubnt.pool.ntp.org {
+        }
+        server 3.ubnt.pool.ntp.org {
+        }
+    }
+    syslog {
+        global {
+            facility all {
+                level notice
+            }
+            facility protocols {
+                level debug
+            }
+        }
+    }
+    time-zone Europe/Amsterdam
+}
